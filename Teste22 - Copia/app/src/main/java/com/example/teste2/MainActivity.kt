@@ -73,6 +73,39 @@ fun exemploLambda(){
 
 }
 
-fun calcularIrrf(salarioBruto: Double?): Double{
-    if salarioBruto <= 2259,20
+//Ex1: Calculo de IRRF
+fun calcularIrrf(salarioBruto: Double? = 0): Double {
+    val aliquota = when (salarioBruto) {
+        < 2259.20 -> 0
+        in 2259.21 < .. < 2826.65 -> 0.075
+        else -> 0.15
 }
+    val salarioLiquido = aliquota * salarioBruto
+    println("O valor do salario liquido será $salarioLiquido")
+}
+
+calcularIrrf(1000);
+calcularIrrf(3000);
+
+//Ex2: Fatura de energia com bandeira tarifaria
+fun calcularFatura(consumoKwh: Double, precoKwh: Double): Double{
+    val valorFinal = if (consumoKwh>150) consumoKwh * precoKwh * 1.10 else consumoKwh * precoKwh
+    println("R$ $valorFinal")
+}
+
+//Ex3: Validador de segurança de token
+fun validarAcesso(token: String?) : String{
+    val tamanho: Int? = token?.length
+    // WHEN: o Switch-Case potente do Kotlin
+    when (tamanho) {
+        null           -> println("Token ausente")
+        in 0.0..9.9    -> println("Token muito curto")
+        else           -> println("Token aprovado")
+    }
+}
+
+validarAcesso();
+validarAcesso("abc123");
+validarAcesso("abc123xyz789");
+
+//Ex4:

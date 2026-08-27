@@ -18,7 +18,7 @@ fun calcularIrrf(salarioBruto:Double?):Double{
 }
 
 fun executarEx01(){
-    val casosDeTeste:List<Double?> = ListOf(2000.0,2500.0,5000.0,null)
+    val casosDeTeste:List<Double?> = listOf(2000.0,2500.0,5000.0,null)
 
     casosDeTeste.forEach {salarioBruto ->
         val entrada = salarioBruto?.emReais() ?: "null (não informado)"

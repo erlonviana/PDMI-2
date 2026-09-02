@@ -1,4 +1,4 @@
-package com.example.app_teste.model
+package com.example.teste2
 
 // Função de suporte para formatar valores em reais
 fun Double.emReais(): String {
@@ -38,10 +38,10 @@ val cenarios = mapOf( //mapOf é um dicionário chave-valor
     "Black Friday" to blackFriday
 )
 
-fun executar() {
+fun executarEx04() {
     val valorOriginal = 200.0
 
-    println("Valor original: ${valorOriginal.emReais()}")
+    println("Ex04 | Valor original: ${valorOriginal.emReais()}")
 
     cenarios.forEach { (nome, regra) ->
         val valorFinal = aplicarDesconto(valorOriginal, regra)

@@ -1,8 +1,6 @@
-package com.example.teste2.ui.theme
+package com.example.teste2
 
-import com.example.teste2.calcularFatura
-
-fun calcular(consumoKwh:Double,precoKwh:Double):Double = consumoKwh * precoKwh * if(consumoKwh>150) 1.10 else 1.0
+private fun calcular(consumoKwh:Double,precoKwh:Double):Double = consumoKwh * precoKwh * if(consumoKwh>150) 1.10 else 1.0
 
 fun exeEx02(){
     val precoKwh = 0.85

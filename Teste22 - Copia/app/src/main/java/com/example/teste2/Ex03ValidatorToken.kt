@@ -14,7 +14,7 @@ fun executarEx03(){
     casosDeTeste.forEach{ token ->
         //verificar função let********
         val entrada = token?.let { "$it (${it.length} caracteres)" }?: "null"
-        println("Token $entrada -> ${validadorAcesso(token)}")
+        println("Ex03 | Token $entrada -> ${validadorAcesso(token)}")
 
     }
 }

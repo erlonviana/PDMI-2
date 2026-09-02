@@ -1,5 +1,5 @@
 // Define o pacote ao qual este arquivo pertence
-package com.example.teste
+package com.example.teste2
 
 // Importa a função emReais para formatar valores como moeda brasileira (R$)
 import util.emReais
@@ -69,7 +69,7 @@ fun executarEx02() {
         // calcularFatura → calcula o valor da conta
         // emReais()     → transforma o número em formato R$
         println(
-            "Consumo $consumo Kwh [$bandeira] -> " +
+            "Ex02 | Consumo $consumo Kwh [$bandeira] -> " +
                     "${calcularFatura(consumo, precoKwh).emReais()}"
         )
     }

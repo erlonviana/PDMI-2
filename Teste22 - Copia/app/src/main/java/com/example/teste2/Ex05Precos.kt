@@ -22,11 +22,11 @@ fun filtrarSalarios(salariosBrutos:List<Double>):List<Double>{
 fun executarEx05(){
     val salariosBrutos = ListOf(1500.0, 2000.0, 2500.0, 3000.0, 5000.0)
     val liquidosAprovados = filtrarSalarios(salariosBrutos)
-    println("EX05 | Salarios Liquidos acima de ${PATAMAR_MINIMO.emReais()}")
+    println("Ex05 | Salarios Liquidos acima de ${PATAMAR_MINIMO.emReais()}")
     liquidosAprovados.forEach { liquido ->
         println("Salario liquido ${liquido.emReais()}")
     }
-    println("Lista original: $salariosBrutos")
+    println("Ex05 | Lista original: $salariosBrutos")
 }
 
 //.map : cria uma nova lista temporaria com base na lista fornecida, de acordo com os parametros indicados

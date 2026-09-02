@@ -19,7 +19,7 @@ fun reajusteParaCategoriaEletronicos(catalogo: List<Produto>): List<Produto =
         }
 
 
-fun executarEx06(){
+fun executarEx06_2(){
     val catalogo = listOf(
         Produto(nome = "Notebook", preco = 3000.0, categoria = "Eletrônicos"),
         Produto(nome = "Cadeira", preco = 800.0, categoria = "Móveis"),
@@ -27,7 +27,7 @@ fun executarEx06(){
     )
 
     reajusteParaCategoriaEletronicos(catalogo).forEach { produto ->
-        println("EX06 | ${produto.nome} (${produto.categoria}): ${produto.preco.emReais()}")
+        println("EX06-2 | ${produto.nome} (${produto.categoria}): ${produto.preco.emReais()}")
     }
 
 

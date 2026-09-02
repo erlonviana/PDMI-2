@@ -1,0 +1,5 @@
+{
+    "code-runner.executorMap": {
+        "kotlin": "cd $dir && C:\\kotlin\\bin\\kotlinc -include-runtime -d out.jar $fileName && java -jar out.jar"
+    }
+}

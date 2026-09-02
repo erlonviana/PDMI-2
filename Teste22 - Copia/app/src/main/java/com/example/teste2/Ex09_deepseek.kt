@@ -46,3 +46,8 @@ fun main() {
     }
 }
 
+/*
+O professor escolheu open class para ser mais flexível e reutilizar código. O Carro não precisa
+reescrever o método porque ele já funciona com a implementação padrão do pai. O Caminhao sobrescreve
+para adicionar o cálculo do peso. É uma escolha de design inteligente! 🚀
+*/

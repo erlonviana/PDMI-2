@@ -1,6 +1,8 @@
-package com.example.teste2.model
+package com.example.teste2
 
-import com.example.app_teste.model.emReais
+import com.example.teste2.model.Veiculo
+import com.example.teste2.model.Carro
+import com.example.teste2.model.Caminhao
 
 fun executarEx09(){
     val diasLocacao = 5
@@ -15,5 +17,11 @@ fun executarEx09(){
     }
 
 }
+
+/*
+O professor escolheu open class para ser mais flexível e reutilizar código. O Carro não precisa
+reescrever o método porque ele já funciona com a implementação padrão do pai. O Caminhao sobrescreve
+para adicionar o cálculo do peso. É uma escolha de design inteligente! 🚀
+*/
 
 

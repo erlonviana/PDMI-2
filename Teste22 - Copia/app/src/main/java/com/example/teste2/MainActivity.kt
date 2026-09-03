@@ -13,5 +13,6 @@ fun main() {
     executarEx07()
     executarEx08()
     executarEx09()
+    executarEx10()
 
 }

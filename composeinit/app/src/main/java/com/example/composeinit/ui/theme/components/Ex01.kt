@@ -3,7 +3,6 @@ package com.example.composeinit.ui.theme.components
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.modifier
 
 //Ex1 Corrigido:
 // Ex1: Calculo de IRRF (Imposto de Renda)
@@ -52,5 +51,8 @@ fun executarEx01() {
 @Composable
 fun Ex01(imposto1: Double = calcularIrrf(1000.0), modifier: Modifier = Modifier) {
     // Teste 1: Salário R$ 1.000,00 (isento)
-    Text(Text = "Ex01 | Salário R$ 1.000,00 -> Imposto: R$ $imposto1", modifier = modifier })
+    Text(
+        text = "Ex01 | Salário R$ 1.000,00 -> Imposto: R$ $imposto1",
+        modifier = modifier
+    )
 }

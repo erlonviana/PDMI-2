@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeinit.ui.theme.ComposeinitTheme
 import com.example.composeinit.ui.theme.components.BoasVindas
+import com.example.composeinit.ui.theme.components.Ex01
 
 //classe principal logo abaixo
 class MainActivity : ComponentActivity() {
@@ -26,10 +27,10 @@ class MainActivity : ComponentActivity() {
                 //scaffold: material Design, serve como template, dando slots pré-definidos
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     BoasVindas(
-                        name = "Erlon." +
-                                "",
+                        name = "Erlon",
                         modifier = Modifier.padding(paddingValues = innerPadding)
                     )
+                    Ex01()
                 }
             }
         }

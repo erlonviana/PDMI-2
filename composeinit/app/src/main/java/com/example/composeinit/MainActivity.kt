@@ -1,3 +1,4 @@
+
 package com.example.composeinit
 
 import android.os.Bundle
@@ -13,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeinit.ui.theme.ComposeinitTheme
 import com.example.composeinit.ui.theme.components.BoasVindas
-import com.example.composeinit.ui.theme.components.Ex01
 
 //classe principal logo abaixo
 class MainActivity : ComponentActivity() {
@@ -30,7 +30,6 @@ class MainActivity : ComponentActivity() {
                         name = "Erlon",
                         modifier = Modifier.padding(paddingValues = innerPadding)
                     )
-                    Ex01()
                 }
             }
         }

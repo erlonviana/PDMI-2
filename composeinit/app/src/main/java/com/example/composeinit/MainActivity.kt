@@ -1,19 +1,16 @@
 
 package com.example.composeinit
 
+import L01FirstComposable
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeinit.ui.theme.ComposeinitTheme
-import com.example.composeinit.ui.theme.components.BoasVindas
 
 //classe principal logo abaixo
 class MainActivity : ComponentActivity() {
@@ -25,12 +22,12 @@ class MainActivity : ComponentActivity() {
             ComposeinitTheme {
                 //innerPadding: impede o estouro a construir o composable (não avança na barra superior e de menu)
                 //scaffold: material Design, serve como template, dando slots pré-definidos
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    BoasVindas(
-                        name = "Erlon",
-                        modifier = Modifier.padding(paddingValues = innerPadding)
-                    )
-                }
+                //Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                    BoasVindas(
+//                        name = "Erlon",
+//                        modifier = Modifier.padding(paddingValues = innerPadding)
+//                    )
+                L01FirstComposable ()
             }
         }
     }

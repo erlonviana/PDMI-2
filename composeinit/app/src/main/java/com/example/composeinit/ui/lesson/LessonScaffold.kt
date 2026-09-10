@@ -2,6 +2,7 @@ package com.example.composeinit.ui.lesson
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
@@ -34,8 +35,10 @@ import androidx.compose.ui.unit.dp
 fun LessonScaffold(
     title: String,
     notice: String,
-    demo: @Composable () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    controls:(@Composable ColumnScope.()->Unit)? = null,
+    //o componente visual é o ultimo para podermos acessá-lo em chamadas futuras
+    demo: @Composable () -> Unit
 ) {
     Scaffold(
         modifier = modifier,
@@ -61,6 +64,16 @@ fun LessonScaffold(
                 .padding(16.dp)
                 .imePadding()
         ) {
+            DemoArea (content = demo )
+
+            Text(
+                text = notice,
+                style = MaterialTheme.typography.bodyMedium
+            )
+
+            if (controls!=null){
+                ControlPanel {content = controls }
+            }
 
         }
     }
@@ -95,4 +108,17 @@ private fun DemoArea(
 
 }
 
+@Composable
+private fun ControlPanel(
+    content:(@Composable ColumnScope.() -> Unit)
+) {
+    Card(){
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(all = 16.dp),
+
+        content = content,
+    )}
+}
  

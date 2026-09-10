@@ -1,4 +1,4 @@
-package com.example.composeinit.ui.theme.components
+package com.example.composeinit.ui.components
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

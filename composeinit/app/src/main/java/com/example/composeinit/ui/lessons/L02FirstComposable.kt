@@ -26,8 +26,8 @@ private enum class TextStyleOption(val label: String){
 
 @Composable
 fun L02FirstComposable() {
-    var styleOption by remember { mutableStateOf(value = TextStyleOption.BODY) }
-    var maxLines by remember { mutableStateOf(value = false) }   // ← ADICIONADO
+    var styleOption by remember { mutableStateOf(value = TextStyleOption.BODY) } //busca os valores a partir de BODY
+    var limitLines by remember { mutableStateOf(value = false) }   // limite de linhas *
 
     LessonScaffold(
         title = "L02FirstComposable",
@@ -37,8 +37,8 @@ fun L02FirstComposable() {
         controls = {
             SwitchControl(
                 label = "maxLines = 1",
-                checked = maxLines,                          // ← USA O ESTADO
-                onCheckedChange = { maxLines = it }          // ← ATUALIZA O ESTADO
+                checked = limitLines,                          // ← USA O ESTADO *
+                onCheckedChange = { limitLines = it }          // ← ATUALIZA O ESTADO
             )
             OptionsControl(
                 label = "style",
@@ -56,7 +56,7 @@ fun L02FirstComposable() {
                 TextStyleOption.TITLE -> MaterialTheme.typography.titleLarge
                 TextStyleOption.HEADLINE -> MaterialTheme.typography.headlineMedium
             },
-            maxLines = if (maxLines) 1 else Int.MAX_VALUE,   // ← aplica o switch
+            maxLines = if (limitLines) 1 else Int.MAX_VALUE,   // ← aplica o switch *
             overflow = TextOverflow.Ellipsis                 // ← mostra "..." quando corta
         )
     }

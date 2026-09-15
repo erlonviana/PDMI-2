@@ -1,5 +1,6 @@
 package com.example.composeinit.ui.lesson
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -12,6 +13,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -22,7 +24,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.CornerRadius
@@ -72,7 +73,7 @@ fun LessonScaffold(
             )
 
             if (controls!=null){
-                ControlPanel {content = controls }
+                ControlPanel (content = controls )
             }
 
         }
@@ -112,13 +113,13 @@ private fun DemoArea(
 private fun ControlPanel(
     content:(@Composable ColumnScope.() -> Unit)
 ) {
-    Card(){
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(all = 16.dp),
-
-        content = content,
-    )}
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            content = content,
+        )
+    }
 }
- 

@@ -1,35 +1,34 @@
 package com.example.composeinit.ui.lesson
 
-import android.widget.Switch
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-    fun switchControl (
+fun SwitchControl (
     label: String,
     checked: Boolean,
     onCheckedChange:(Boolean)-> Unit,
     modifier: Modifier = Modifier
+){
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
     ){
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ){
-            Text(
-                text= label,
-                style = MaterialTheme.typography.labelLarge
-            )
-            Switch(
-                checked = checked,
-                onCheckedChange = onCheckedChange
-            )
-        }
+        Text(
+            text= label,
+            style = MaterialTheme.typography.labelLarge
+        )
+        Switch(
+            checked = checked,
+            onCheckedChange = onCheckedChange
+        )
     }
-
+}

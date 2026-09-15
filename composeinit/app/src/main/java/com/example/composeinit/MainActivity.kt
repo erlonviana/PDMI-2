@@ -1,7 +1,5 @@
-
 package com.example.composeinit
 
-import L01FirstComposable
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,6 +8,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.composeinit.ui.lessons.L01FirstComposable
+import com.example.composeinit.ui.lessons.L02FirstComposable
 import com.example.composeinit.ui.theme.ComposeinitTheme
 
 //classe principal logo abaixo
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
 //                        name = "Erlon",
 //                        modifier = Modifier.padding(paddingValues = innerPadding)
 //                    )
-                L01FirstComposable ()
+                L02FirstComposable()
             }
         }
     }

@@ -1,14 +1,17 @@
+package com.example.composeinit.ui.lessons
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.composeinit.ui.components.BoasVindas
 import com.example.composeinit.ui.lesson.LessonScaffold
-import com.example.composeinit.ui.theme.ComposeinitTheme
+import com.example.composeinit.ui.lesson.OptionsControl
+import com.example.composeinit.ui.lesson.SwitchControl
 import com.example.composeinit.ui.theme.ComposeinitTheme
 
 private const val LONG_TEXT =
@@ -20,9 +23,11 @@ private enum class TextStyleOption(val label: String){
     TITLE(label="titleLarge"),
     HEADLINE(label="headlineMedium")
 }
+
 @Composable
 fun L02FirstComposable() {
-var styleOption by remember { mutableStateOf(value = TextStyleOption.BODY) }
+    var styleOption by remember { mutableStateOf(value = TextStyleOption.BODY) }
+    var maxLines by remember { mutableStateOf(value = false) }   // ← ADICIONADO
 
     LessonScaffold(
         title = "L02FirstComposable",
@@ -32,20 +37,28 @@ var styleOption by remember { mutableStateOf(value = TextStyleOption.BODY) }
         controls = {
             SwitchControl(
                 label = "maxLines = 1",
-                checked = True,
-                onCheckedChange = {}
+                checked = maxLines,                          // ← USA O ESTADO
+                onCheckedChange = { maxLines = it }          // ← ATUALIZA O ESTADO
             )
             OptionsControl(
                 label = "style",
                 options = TextStyleOption.entries.toList(),
-                selected = {}, //onde guarda o estado
+                selected = styleOption, //onde guarda o estado
                 optionLabel = {it.label},//mostra o item que vc está selecionando da lista
                 onSelected = {styleOption=it} //escuta a alteração que o usuario faz
-
             )
         }
     ) {
-        Text("DEMO L02FirstComposable")
+        Text(
+            text = LONG_TEXT,                                // ← usa LONG_TEXT
+            style = when (styleOption) {                     // ← aplica o estilo escolhido
+                TextStyleOption.BODY -> MaterialTheme.typography.bodyLarge
+                TextStyleOption.TITLE -> MaterialTheme.typography.titleLarge
+                TextStyleOption.HEADLINE -> MaterialTheme.typography.headlineMedium
+            },
+            maxLines = if (maxLines) 1 else Int.MAX_VALUE,   // ← aplica o switch
+            overflow = TextOverflow.Ellipsis                 // ← mostra "..." quando corta
+        )
     }
 }
 
@@ -56,6 +69,3 @@ private fun L02FirstComposablePreview() {
         L02FirstComposable()
     }
 }
-
-
- 

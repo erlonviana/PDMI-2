@@ -1,3 +1,4 @@
+package com.example.composeinit.ui.lessons
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -5,8 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeinit.ui.components.BoasVindas
-import com.example.composeinit.ui.lesson.LessonScaffold
-import com.example.composeinit.ui.theme.ComposeinitTheme
+import com.example.composeinit.ui.lesson.LessonScaffold        // ← ADICIONADO
 import com.example.composeinit.ui.theme.ComposeinitTheme
 
 @Composable
@@ -40,10 +40,7 @@ fun GreetingDemoPreview() {
 @Preview
 @Composable
 private fun L01FirstComposablePreview() {
-    ComposeinitTheme(){
+    ComposeinitTheme() {
         L01FirstComposable()
     }
 }
-
-
- 

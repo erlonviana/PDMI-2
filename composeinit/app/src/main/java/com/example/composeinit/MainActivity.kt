@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeinit.ui.lessons.L01FirstComposable
 import com.example.composeinit.ui.lessons.L02FirstComposable
+import com.example.composeinit.ui.lessons.L03Parameters
 import com.example.composeinit.ui.theme.ComposeinitTheme
 
 //classe principal logo abaixo
@@ -27,7 +28,8 @@ class MainActivity : ComponentActivity() {
 //                        name = "Erlon",
 //                        modifier = Modifier.padding(paddingValues = innerPadding)
 //                    )
-                L02FirstComposable()
+                //L02FirstComposable()
+                L03Parameters()
             }
         }
     }

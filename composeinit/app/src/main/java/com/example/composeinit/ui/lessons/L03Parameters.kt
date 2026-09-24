@@ -14,13 +14,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composeinit.ui.lesson.LessonScaffold
+import com.example.composeinit.ui.lesson.TextControl
 
 @Composable
 fun L03Parameters() {
     var text by remember { mutableStateOf("Tela de login") } // remember serve para guardar o estado da variável
     LessonScaffold(
         title = "Parametros",
-        notice = "O primeiro titulo ignora o que vc digita"
+        notice = "O primeiro titulo ignora o que vc digita",
+        controls = {
+            TextControl(
+                label = "Texto a ser alterado",
+                value = text,
+                onValueChange = { text = it },
+
+            )
+        }
     ) {
         ParametersDemo(text)
     }
@@ -38,6 +47,7 @@ fun ParametersDemo(texto: String) {
         StatefullTitle(texto)
         StatefullTitle(text = "$texto (de novo)")
         StatefullTitle(texto.uppercase())
+        )
     }
 }
 

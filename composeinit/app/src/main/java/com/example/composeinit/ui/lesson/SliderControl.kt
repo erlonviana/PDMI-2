@@ -10,11 +10,12 @@ import kotlin.math.roundToInt
 
 @Composable
 fun SliderControl(
-    label:String,
-    value:Float,
+    label: String,
+    value: Float,
     onValueChange:(Float)-> Unit,
     range: ClosedFloatingPointRange<Float>,
-    modifier: Modifier = Modifier) {
+    modifier: Modifier = Modifier
+){
 
     Column(
         modifier = modifier.fillMaxWidth()

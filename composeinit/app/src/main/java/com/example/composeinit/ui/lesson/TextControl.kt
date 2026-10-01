@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun TextControl(
+    label:String,
     value: String,
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier
@@ -15,8 +16,9 @@ fun TextControl(
     OutlinedTextField(
         value = value,
         onValueChange = onValueChange,
-        label = { Text(text = "LABEL") },
-        singleLine = true,
+        label = { Text(label)},
+        singleLine =true,
         modifier = modifier.fillMaxWidth()
     )
+
 }

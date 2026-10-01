@@ -24,6 +24,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.CornerRadius
@@ -37,9 +38,8 @@ fun LessonScaffold(
     title: String,
     notice: String,
     modifier: Modifier = Modifier,
-    controls:(@Composable ColumnScope.()->Unit)? = null,
-    //o componente visual é o ultimo para podermos acessá-lo em chamadas futuras
-    demo: @Composable () -> Unit
+    controls: (@Composable ColumnScope.() -> Unit)? = null,
+    demo: @Composable () -> Unit,
 ) {
     Scaffold(
         modifier = modifier,
@@ -65,15 +65,15 @@ fun LessonScaffold(
                 .padding(16.dp)
                 .imePadding()
         ) {
-            DemoArea (content = demo )
+            DemoArea(content = demo)
 
             Text(
                 text = notice,
                 style = MaterialTheme.typography.bodyMedium
             )
 
-            if (controls!=null){
-                ControlPanel (content = controls )
+            if (controls != null) {
+                ControlPanel(content = controls)
             }
 
         }
@@ -110,16 +110,17 @@ private fun DemoArea(
 }
 
 @Composable
-private fun ControlPanel(
-    content:(@Composable ColumnScope.() -> Unit)
-) {
+private fun ControlPanel(content: @Composable ColumnScope.() -> Unit) {
     Card(modifier = Modifier.fillMaxWidth()) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
-            content = content,
+            content = content
         )
     }
 }
+
+
+

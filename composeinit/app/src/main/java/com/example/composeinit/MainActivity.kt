@@ -12,6 +12,7 @@ import com.example.composeinit.ui.lessons.L01FirstComposable
 import com.example.composeinit.ui.lessons.L02FirstComposable
 import com.example.composeinit.ui.lessons.L03Parameters
 import com.example.composeinit.ui.lessons.L04Modifier
+import com.example.composeinit.ui.lessons.L05ColumnRow
 import com.example.composeinit.ui.theme.ComposeinitTheme
 
 //classe principal logo abaixo
@@ -32,6 +33,7 @@ class MainActivity : ComponentActivity() {
                 //L02FirstComposable()
                 L03Parameters()
                 L04Modifier()
+                L05ColumnRow()
             }
         }
     }

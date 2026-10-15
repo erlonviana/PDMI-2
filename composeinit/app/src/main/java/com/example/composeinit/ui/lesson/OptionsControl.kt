@@ -45,3 +45,5 @@ fun <T>OptionsControl(
     }
 
 }
+
+//alterar bloco options.forEach para LazyRow

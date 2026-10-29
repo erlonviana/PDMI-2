@@ -17,6 +17,8 @@ import com.example.composeinit.ui.lessons.L06Box
 import com.example.composeinit.ui.lessons.L07WeigthSpace
 import com.example.composeinit.ui.lessons.L08LazyColumn
 import com.example.composeinit.ui.lessons.L09Button
+import com.example.composeinit.ui.lessons.L11CardSurface
+import com.example.composeinit.ui.lessons.L12Scaffold
 import com.example.composeinit.ui.theme.ComposeinitTheme
 
 //classe principal logo abaixo
@@ -42,6 +44,8 @@ class MainActivity : ComponentActivity() {
                 L07WeigthSpace()
                 L08LazyColumn()
                 L09Button()
+                L11CardSurface()
+                L12Scaffold()
             }
         }
     }
